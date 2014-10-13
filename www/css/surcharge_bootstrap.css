@@ -1,0 +1,58 @@
+.my-navbar {
+  min-height: 70px;
+  border-width: 0px;
+  background-color: white;
+  padding: 0px 15px;
+  position: absolute;
+  width: 100%;
+  margin: 0;
+}
+
+.my-navbar-brand {
+  min-height: 70px;
+  outline: none !important;
+}
+
+.navbar-nav > li > a {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 70px;
+  color: black;
+  font-family: avenirnextltprodemi, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  outline: none;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
+  color: #CC002D !important;
+  background: none;
+}
+
+.navbar-nav > li > a:hover {
+  color: #CC002D !important;
+}
+
+.my-navbar-toggle {
+  margin: 18px 15px 0px;
+}
+
+.my-main-container {
+  margin: 0px 0px 0px 0px;
+  padding: 0;
+}
+
+.my-navbar-notfixed {
+  bottom: 0px !important;
+}
+
+.my-navbar-fixedtop {
+  position: fixed !important;
+  top: 0px;
+}
+
+.row {
+  margin: 0;
+}
