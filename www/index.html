@@ -11,6 +11,7 @@
   <link href="/css/surcharge_bootstrap.css" rel="stylesheet">
   <link href="/css/custom.css" rel="stylesheet">
   <link href="/css/component-caption-hover.css" rel="stylesheet">
+  <link href="/css/bootstrapValidator.min.css" rel="stylesheet">
 
 </head>
 
@@ -223,39 +224,39 @@
 <!-- CONTACT -->
 
 <section id="contact">
-
+<div class="img-holder" data-image="/images/wall00.jpg"></div>
 <div class="img-presentation" style="background-color: #2F4154;"></div>
 
 <div class="row" style="padding-bottom: 40px; margin-top: 40px;">
   <div class="col-md-4 col-md-offset-2 bloc-form-mail">
-    <form role="form">
+    <form role="form" id="form-contact-us">
       <div class="row">
         <div class="col-md-6 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputFirstname" placeholder="Firstname *">
+          <input type="text" class="form-control input-contact" id="contactInputFirstname" name="contactInputFirstname" placeholder="Firstname *">
         </div>
         <div class="col-md-6 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputLastname" placeholder="Lastname *">
+          <input type="text" class="form-control input-contact" id="contactInputLastname" name="contactInputLastname" placeholder="Lastname *">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 form-group">
-          <input type="email" class="form-control input-contact" id="contactInputEmail" placeholder="Email *">
+          <input type="email" class="form-control input-contact" id="contactInputEmail" name="contactInputEmail" placeholder="Email *">
         </div>
         <div class="col-md-6 form-group">
-          <input type="phone" class="form-control input-contact" id="contactInputPhone" placeholder="Phone number">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputSubject" placeholder="Subject *">
+          <input type="phone" class="form-control input-contact" id="contactInputPhone" name="contactInputPhone" placeholder="Phone number">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12 form-group">
-          <textarea class="form-control input-contact" rows="7" id="messageInputSubject" placeholder="Message *"></textarea>
+          <input type="text" class="form-control input-contact" id="contactInputSubject" name="contactInputSubject" placeholder="Subject *">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <textarea class="form-control input-contact" rows="7" id="contactInputMessage" name="contactInputMessage" placeholder="Message *"></textarea>
         </div>
       </div>
 
@@ -291,20 +292,85 @@
   </div>
 </footer>
 
-</body>
-
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/controller.js"></script>
 <script src="/js/modernizr.custom.js"></script>
 <script src="/js/toucheffects.js"></script>
+<script src="/js/bootstrapValidator.min.js"></script>
+<script src="/js/jquery.imageScroll.min.js"></script>
 
 <script>
 $(function() {
   $('body').scrollspy({ target: '.navbar', offset: 70 });
 
+  $("#navbar").find("a").click(function(e) {
+      e.preventDefault();
+      var section = $(this).attr("href");
+      $("html, body").animate({
+          scrollTop: $(section).offset().top,
+      }, 1200);
+  });
+
+  $('#form-contact-us').bootstrapValidator({
+      feedbackIcons: {
+          valid: null,
+          invalid: null,
+          validating: null
+      },
+      live: 'disabled',
+      fields: {
+          contactInputFirstname: {
+              message: 'The firstname is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The firstname is required and cannot be empty'
+                  }
+              }
+          },
+          contactInputLastname: {
+              message: 'The lastname is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The lastname is required and cannot be empty'
+                  }
+              }
+          },
+          contactInputEmail: {
+              message: 'The email is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The email is required and cannot be empty'
+                  },
+                  emailAddress: {
+                      message: 'The email address is not a valid'
+                  }
+              }
+          },
+          contactInputSubject: {
+              message: 'The subject is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The subject is required and cannot be empty'
+                  }
+              }
+          },
+          contactInputMessage: {
+              message: 'The message is not valid',
+              validators: {
+                  notEmpty: {
+                      message: 'The message is required and cannot be empty'
+                  },
+                  stringLength: {
+                      min: 10,
+                      message: 'The message must have at least 10 characters'
+                  }
+              }
+          }
+      }
+  });
+$('.img-holder').imageScroll();
 });
 </script>
 
