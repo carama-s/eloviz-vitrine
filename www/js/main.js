@@ -66,5 +66,7 @@ $(function() {
           }
       }
   });
-  $('.img-holder').imageScroll();
+  $('.img-holder').imageScroll({
+    coverRatio: 0.35}
+    );
 });
