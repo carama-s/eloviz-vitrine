@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  background: url('/images/wall00.jpg') no-repeat scroll center center / cover transparent;
+  background: url('/images/wall01.jpg') no-repeat scroll center center / cover transparent;
   text-align: center;
   position: relative;
   z-index: 1000;
@@ -30,6 +30,30 @@ header {
 section .img-holder {
 }
 
+.title-holder {
+
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  transform: translateZ(1px);
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+}
+
+.title-holder-min {
+  font-size: 34px;
+  font-family: "avenirnextltprodemi";
+  color: #ecf0f1;
+}
+
+.title-holder-max {
+  font-size: 42px;
+  font-family: "avenirnextltprodemi";
+  color: #fdf1f2;
+  text-transform: uppercase;
+}
 
 #home {
   /*

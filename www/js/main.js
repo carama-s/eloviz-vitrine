@@ -5,7 +5,7 @@ $(function() {
       e.preventDefault();
       var section = $(this).attr("href");
       $("html, body").animate({
-          scrollTop: $(section).offset().top,
+          scrollTop: $(section).offset().top - 70,
       }, 1200);
   });
 
@@ -67,6 +67,6 @@ $(function() {
       }
   });
   $('.img-holder').imageScroll({
-    coverRatio: 0.45
+    coverRatio: 0.4
     });
 });
