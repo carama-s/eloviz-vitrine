@@ -1,8 +1,8 @@
 /** Used Only For Touch Devices **/
 ( function( window ) {
-	
+
 	// for touch devices: add class cs-hover to the figures when touching the items
-	if( Modernizr.touch ) {
+	if( Modernizr.touch && false ) {
 
 		// classie.js https://github.com/desandro/classie/blob/master/classie.js
 		// class helper functions from bonzo https://github.com/ded/bonzo
