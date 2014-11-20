@@ -23,7 +23,7 @@ if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['ema
 
     $mail->From = $_POST['email'];
     $mail->FromName = $_POST['firstname'] . " " . $_POST['lastname'];
-    $mail->AddAddress('stephane.caramanno@epitech.eu');
+    $mail->AddAddress('stephane.caramanno@gmail.com');
     $mail->Subject = $_POST['subject'];
     $mail->Body = "Name: " . $_POST['firstname'] . " " . $_POST['lastname'] . "\r\n\r\nMessage: " . stripslashes($_POST['message']);
 
