@@ -19,6 +19,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
+<script src="/js/angular-translate.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/controller.js"></script>
 <script src="/js/modernizr.custom.js"></script>
@@ -45,14 +46,17 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="TranslateController">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#home" style="">Home</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#technologies">Technologies</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <li><a href="#home">{{ 'HOME' | translate }}</a></li>
+        <li><a href="#project">{{ 'PROJECT' | translate }}</a></li>
+        <li><a href="#technologies">{{ 'TECHNOLOGIES' | translate }}</a></li>
+        <li><a href="#team">{{ 'TEAM' | translate }}</a></li>
+        <li><a href="#contact">{{ 'CONTACT' | translate }}</a></li>
+        <li><a>&nbsp;</a></li>
+        <li><a ng-click="changeLanguage('en')" class="li-lang" ng-class="{ 'li-lang-selected' : (current_language == 'en') }">{{ 'EN' | translate }}</a></li>
+        <li><a ng-click="changeLanguage('fr')" class="li-lang" ng-class="{ 'li-lang-selected' : (current_language == 'fr') }">{{ 'FR' | translate }}</a></li>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </div>
@@ -64,33 +68,33 @@
 <section id="project">
 
 <div class="img-holder" data-image="/images/header-project.png">
-  <p class="title-holder"><span class="title-holder-min">Our</span><br /><span class="title-holder-max">Project</span></p>
+  <p class="title-holder"><span class="title-holder-min">{{ 'OUR' | translate }}</span><br /><span class="title-holder-max">{{ 'PROJECT' | translate }}</span></p>
 </div>
 
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
-  <div class="col-md-4">Project</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
+  <div class="col-md-4">{{ 'PROJECT' | translate }}</div>
 </div>
 
 </section>
@@ -100,33 +104,33 @@
 <section id="technologies">
 
 <div class="img-holder" data-image="/images/header-technologies.png">
-  <p class="title-holder"><span class="title-holder-min">The</span><br /><span class="title-holder-max">Technologies</span></p>
+  <p class="title-holder"><span class="title-holder-min">{{ 'THE' | translate }}</span><br /><span class="title-holder-max">{{ 'TECHNOLOGIES' | translate }}</span></p>
 </div>
 
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
 </div>
 <div class="row" style="text-align:center; padding: 60px">
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
-  <div class="col-md-4">Technologies</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
+  <div class="col-md-4">{{ 'TECHNOLOGIES' | translate }}</div>
 </div>
 
 </section>
@@ -136,7 +140,7 @@
 <section id="team">
 
 <div class="img-holder" data-image="/images/header-team.png">
-  <p class="title-holder"><span class="title-holder-min">Our</span><br /><span class="title-holder-max">Team</span></p>
+  <p class="title-holder"><span class="title-holder-min">{{ 'OUR' | translate }}</span><br /><span class="title-holder-max">{{ 'TEAM' | translate }}</span></p>
 </div>
 
 <div class="row" style="padding-bottom: 40px; margin-top: 40px;">
@@ -147,7 +151,7 @@
       <img src="/images/team/team-dylan.jpg" alt="Dylan LABORIE">
       <figcaption>
           <h3>Dylan LABORIE</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
           <!--<a href="">Button</a>-->
       </figcaption>
     </figure>
@@ -158,7 +162,7 @@
       <img src="/images/team/team-john.jpg" alt="Jonathan SCANZI">
       <figcaption>
           <h3>Jonathan SCANZI</h3>
-          <span>Designer</span>
+          <span>{{ 'DESIGNER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -168,7 +172,7 @@
       <img src="/images/team/team-jb.jpg" alt="Jean-Baptiste GOSSELIN">
       <figcaption>
           <h3>Jean-Baptiste GOSSELIN</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -178,7 +182,7 @@
       <img src="/images/team/team-stephane.jpg" alt="Stéphane CARAMANNO">
       <figcaption>
           <h3>Stéphane CARAMANNO</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -188,7 +192,7 @@
       <img src="/images/team/team-guillaumel.jpg" alt="Guillaume LABBE">
       <figcaption>
           <h3>Guillaume LABBE</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -198,7 +202,7 @@
       <img src="/images/team/team-guillaumec.jpg" alt="Guillaume CASSAND">
       <figcaption>
           <h3>Guillaume CASSAND</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -208,7 +212,7 @@
       <img src="/images/team/team-julien.jpg" alt="Julien VESY">
       <figcaption>
           <h3>Julien VESY</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -218,7 +222,7 @@
       <img src="/images/team/team-joris.jpg" alt="Joris ALBAGNAC">
       <figcaption>
           <h3>Joris ALBAGNAC</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -228,7 +232,7 @@
       <img src="" alt="Matthieu DALMASSE">
       <figcaption>
           <h3>Matthieu DALMASSE</h3>
-          <span>Developer</span>
+          <span>{{ 'DEVELOPER' | translate }}</span>
       </figcaption>
     </figure>
   </li>
@@ -240,7 +244,7 @@
 
 <section id="contact">
 <div class="img-holder" data-image="/images/header-contact.png">
-  <p class="title-holder"><span class="title-holder-min">How to</span><br /><span class="title-holder-max">Contact Us</span></p>
+  <p class="title-holder"><span class="title-holder-min">{{ 'HOW_TO' | translate }}</span><br /><span class="title-holder-max">{{ 'CONTACT_US' | translate }}</span></p>
 </div>
 
 <div class="row" style="padding-bottom: 40px; margin-top: 40px;">
@@ -249,44 +253,44 @@
     <form autocomplete="off" role="form" name="formContactUs" ng-submit="submit_contact_us(formContactUs.$valid)" ng-controller="ContactUsController" novalidate>
       <div class="row">
         <div class="col-md-6 form-group" ng-class="{ 'has-error' : formContactUs.contactInputFirstname.$invalid && submitted }">
-          <input required ng-model="contactInputFirstname" type="text" class="form-control input-contact" name="contactInputFirstname" placeholder="Firstname *">
-          <p ng-show="formContactUs.contactInputFirstname.$invalid && submitted" class="help-block">The firstname is required and cannot be empty.</p>
+          <input required ng-model="contactInputFirstname" type="text" class="form-control input-contact" name="contactInputFirstname" placeholder="{{ 'FIRSTNAME' | translate }} *">
+          <p ng-show="formContactUs.contactInputFirstname.$invalid && submitted" class="help-block">{{ 'FIRSTNAME_ERR_EMPTY' | translate }}</p>
         </div>
         <div class="col-md-6 form-group" ng-class="{ 'has-error' : formContactUs.contactInputLastname.$invalid && submitted }">
-          <input required ng-model="contactInputLastname" type="text" class="form-control input-contact" name="contactInputLastname" placeholder="Lastname *">
-          <p ng-show="formContactUs.contactInputLastname.$invalid && submitted" class="help-block">The lastname is required and cannot be empty.</p>
+          <input required ng-model="contactInputLastname" type="text" class="form-control input-contact" name="contactInputLastname" placeholder="{{ 'LASTNAME' | translate }} *">
+          <p ng-show="formContactUs.contactInputLastname.$invalid && submitted" class="help-block">{{ 'LASTNAME_ERR_EMPTY' | translate }}</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-6 form-group" ng-class="{ 'has-error' : (formContactUs.contactInputEmail.$error.required && submitted) || (!formContactUs.contactInputEmail.$error.required && formContactUs.contactInputEmail.$invalid && submitted) }">
-          <input required ng-model="contactInputEmail" type="email" class="form-control input-contact" name="contactInputEmail" placeholder="Email *">
-          <p ng-show="formContactUs.contactInputEmail.$error.required && submitted" class="help-block">The email is required and cannot be empty.</p>
-          <p ng-show="!formContactUs.contactInputEmail.$error.required && formContactUs.contactInputEmail.$invalid && submitted" class="help-block">The email address is not valid.</p>
+          <input required ng-model="contactInputEmail" type="email" class="form-control input-contact" name="contactInputEmail" placeholder="{{ 'EMAIL' | translate }} *">
+          <p ng-show="formContactUs.contactInputEmail.$error.required && submitted" class="help-block">{{ 'MAIL_ERR_EMPTY' | translate }}</p>
+          <p ng-show="!formContactUs.contactInputEmail.$error.required && formContactUs.contactInputEmail.$invalid && submitted" class="help-block">{{ 'MAIL_ERR_WRONG' | translate }}</p>
         </div>
         <div class="col-md-6 form-group">
-          <input ng-model="contactInputPhone" type="phone" class="form-control input-contact" name="contactInputPhone" placeholder="Phone number">
+          <input ng-model="contactInputPhone" type="phone" class="form-control input-contact" name="contactInputPhone" placeholder="{{ 'PHONE' | translate }}">
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12 form-group" ng-class="{ 'has-error' : formContactUs.contactInputSubject.$invalid && submitted }">
-          <input required ng-model="contactInputSubject" type="text" class="form-control input-contact" name="contactInputSubject" placeholder="Subject *">
-          <p ng-show="formContactUs.contactInputSubject.$invalid && submitted" class="help-block">The subject is required and cannot be empty.</p>
+          <input required ng-model="contactInputSubject" type="text" class="form-control input-contact" name="contactInputSubject" placeholder="{{ 'SUBJECT' | translate }} *">
+          <p ng-show="formContactUs.contactInputSubject.$invalid && submitted" class="help-block">{{ 'SUBJECT_ERR_EMPTY' | translate }}</p>
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12 form-group" ng-class="{ 'has-error' : (formContactUs.contactInputMessage.$error.required && submitted) || (!formContactUs.contactInputMessage.$error.required && formContactUs.contactInputMessage.$invalid && submitted) }">
-          <textarea required ng-model="contactInputMessage" class="form-control input-contact" rows="7" ng-minlength="20" name="contactInputMessage" placeholder="Message *"></textarea>
-          <p ng-show="formContactUs.contactInputMessage.$error.required && submitted" class="help-block">The message is required and cannot be empty.</p>
-          <p ng-show="!formContactUs.contactInputMessage.$error.required && formContactUs.contactInputMessage.$invalid && submitted" class="help-block">The message must have at least 20 characters.</p>
+          <textarea required ng-model="contactInputMessage" class="form-control input-contact" rows="7" ng-minlength="20" name="contactInputMessage" placeholder="{{ 'MESSAGE' | translate }} *"></textarea>
+          <p ng-show="formContactUs.contactInputMessage.$error.required && submitted" class="help-block">{{ 'MSG_ERR_EMPTY' | translate }}</p>
+          <p ng-show="!formContactUs.contactInputMessage.$error.required && formContactUs.contactInputMessage.$invalid && submitted" class="help-block">{{ 'MSG_ERR_20CARAC' | translate }}</p>
         </div>
       </div>
 
-      <p ng-show="sent" style="margin-left: 15px;">Your message has been sent, thank you !</p>
+      <p ng-show="sent" style="margin-left: 15px;">{{ 'SUCCESS_MESSAGE' | translate }}</p>
 
-      <input ng-show="!sent" type="submit" class="btn btn-default btn-form-contact pull-right" value="Submit"/>
+      <input ng-show="!sent" type="submit" class="btn btn-default btn-form-contact pull-right" value="{{ 'SUBMIT' | translate }}"/>
 
     </form>
   </div>
@@ -297,7 +301,7 @@
           <i class="fa fa-lg fa-envelope-o" style="color: black;"></i><span class="mail_link">&nbsp;&nbsp;eloviz_2016@labeip.epitech.eu</span>
         </a>
     </div>
-    <div class="row">If any questions, requests or ideas, contact us !</div>
+    <div class="row">{{ 'IF_QUESTION' | translate }}</div>
   </div>
 </div>
 
@@ -308,7 +312,7 @@
 <footer class="footer">
   <div class="row">
     <div class="col-md-6 text-center">
-        © 2014 <a href="http://eloviz.com" class="social-button">Eloviz</a>. All rights reserved.
+        © 2014 <a href="http://eloviz.com" class="social-button">Eloviz</a>. {{ 'RIGHTS_RESERVED' | translate }}
     </div>
     <div class="col-md-6 text-center">
       <a href="" class="social-button"><i class="fa fa-lg fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;

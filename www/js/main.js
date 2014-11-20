@@ -11,5 +11,5 @@ $(function() {
 
   $('.img-holder').imageScroll({
     coverRatio: 0.4
-    });
+  });
 });
