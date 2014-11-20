@@ -22,7 +22,6 @@ app.controller("ContactUsController", ['$scope', '$http', function($scope, $http
           message: $scope.contactInputMessage
         },
         success: function(result) {
-          alert(result);
         }
       });
       $scope.sent = true;
