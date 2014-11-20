@@ -23,10 +23,8 @@ app.controller("ContactUsController", ['$scope', '$http', function($scope, $http
         },
         success: function(result) {
           alert(result);
-
         }
       });
-      alert("After !");
       $scope.sent = true;
     }
   };

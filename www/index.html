@@ -286,7 +286,7 @@
 
       <p ng-show="sent" style="margin-left: 15px;">Your message has been sent, thank you !</p>
 
-      <input type="submit" class="btn btn-default btn-form-contact pull-right" value="Submit"/>
+      <input ng-disabled="sent" type="submit" class="btn btn-default btn-form-contact pull-right" value="Submit"/>
 
     </form>
   </div>

@@ -3,7 +3,6 @@
 require_once dirname(__FILE__).DIRECTORY_SEPARATOR.'phpmailer/PHPMailerAutoload.php';
 
 if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
-    echo "POST ok !";
 
     if (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['message'])) {
         $data = array('success' => false, 'message' => 'Missing information');
