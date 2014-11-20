@@ -245,38 +245,48 @@
 
 <div class="row" style="padding-bottom: 40px; margin-top: 40px;">
   <div class="col-md-4 col-md-offset-2 bloc-form-mail">
-    <form role="form" id="form-contact-us">
+
+    <form autocomplete="off" role="form" name="formContactUs" ng-submit="submit_contact_us(formContactUs.$valid)" ng-controller="ContactUsController" novalidate>
       <div class="row">
-        <div class="col-md-6 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputFirstname" name="contactInputFirstname" placeholder="Firstname *">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : formContactUs.contactInputFirstname.$invalid && submitted }">
+          <input required ng-model="contactInputFirstname" type="text" class="form-control input-contact" name="contactInputFirstname" placeholder="Firstname *">
+          <p ng-show="formContactUs.contactInputFirstname.$invalid && submitted" class="help-block">The firstname is required and cannot be empty.</p>
         </div>
-        <div class="col-md-6 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputLastname" name="contactInputLastname" placeholder="Lastname *">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : formContactUs.contactInputLastname.$invalid && submitted }">
+          <input required ng-model="contactInputLastname" type="text" class="form-control input-contact" name="contactInputLastname" placeholder="Lastname *">
+          <p ng-show="formContactUs.contactInputLastname.$invalid && submitted" class="help-block">The lastname is required and cannot be empty.</p>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-6 form-group">
-          <input type="email" class="form-control input-contact" id="contactInputEmail" name="contactInputEmail" placeholder="Email *">
+        <div class="col-md-6 form-group" ng-class="{ 'has-error' : (formContactUs.contactInputEmail.$error.required && submitted) || (!formContactUs.contactInputEmail.$error.required && formContactUs.contactInputEmail.$invalid && submitted) }">
+          <input required ng-model="contactInputEmail" type="email" class="form-control input-contact" name="contactInputEmail" placeholder="Email *">
+          <p ng-show="formContactUs.contactInputEmail.$error.required && submitted" class="help-block">The email is required and cannot be empty.</p>
+          <p ng-show="!formContactUs.contactInputEmail.$error.required && formContactUs.contactInputEmail.$invalid && submitted" class="help-block">The email address is not valid.</p>
         </div>
         <div class="col-md-6 form-group">
-          <input type="phone" class="form-control input-contact" id="contactInputPhone" name="contactInputPhone" placeholder="Phone number">
+          <input ng-model="contactInputPhone" type="phone" class="form-control input-contact" name="contactInputPhone" placeholder="Phone number">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-12 form-group">
-          <input type="text" class="form-control input-contact" id="contactInputSubject" name="contactInputSubject" placeholder="Subject *">
+        <div class="col-md-12 form-group" ng-class="{ 'has-error' : formContactUs.contactInputSubject.$invalid && submitted }">
+          <input required ng-model="contactInputSubject" type="text" class="form-control input-contact" name="contactInputSubject" placeholder="Subject *">
+          <p ng-show="formContactUs.contactInputSubject.$invalid && submitted" class="help-block">The subject is required and cannot be empty.</p>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-12 form-group">
-          <textarea class="form-control input-contact" rows="7" id="contactInputMessage" name="contactInputMessage" placeholder="Message *"></textarea>
+        <div class="col-md-12 form-group" ng-class="{ 'has-error' : (formContactUs.contactInputMessage.$error.required && submitted) || (!formContactUs.contactInputMessage.$error.required && formContactUs.contactInputMessage.$invalid && submitted) }">
+          <textarea required ng-model="contactInputMessage" class="form-control input-contact" rows="7" ng-minlength="20" name="contactInputMessage" placeholder="Message *"></textarea>
+          <p ng-show="formContactUs.contactInputMessage.$error.required && submitted" class="help-block">The message is required and cannot be empty.</p>
+          <p ng-show="!formContactUs.contactInputMessage.$error.required && formContactUs.contactInputMessage.$invalid && submitted" class="help-block">The message must have at least 20 characters.</p>
         </div>
       </div>
 
-      <button type="submit" class="btn btn-default btn-form-contact pull-right">Submit</button>
+      <p ng-show="sent" style="margin-left: 15px;">Your message has been sent, thank you !</p>
+
+      <input type="submit" class="btn btn-default btn-form-contact pull-right" value="Submit"/>
 
     </form>
   </div>

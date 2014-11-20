@@ -60,3 +60,9 @@
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background-color: white;
 }
+
+.help-block {
+  font-size: 13px;
+  margin: 0;
+  margin-top: 3px;
+}
