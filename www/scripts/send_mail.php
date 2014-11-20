@@ -13,6 +13,14 @@ if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['ema
 
     $mail = new PHPMailer();
 
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+    $mail->SMTPAuth = false;                              // Enable SMTP authentication
+    //$mail->Username = 'user@example.com';                 // SMTP username
+    //$mail->Password = 'secret';                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;
+
     $mail->From = $_POST['email'];
     $mail->FromName = $_POST['firstname'] . " " . $_POST['lastname'];
     $mail->AddAddress('stephane.caramanno@epitech.eu');
